@@ -8,15 +8,15 @@
 <body>
 
 {% block content  %}
-    <form method='POST' action='{% url '登录' %}' align = 'center' enctype="multipart/form-data">
+    <form method='POST' action='{% url '发布页面' %}' align = 'center' enctype="multipart/form-data">
       {% csrf_token %}
   <div class="text-center mb-4">
     <h1 class="h3 mb-3 font-weight-normal">发布产品</h1>
   </div>
 
 
-      APP名称:<br>
-    <input type="text" name="APP名称">
+      标题:<br>
+    <input type="text" name="标题">
      <br>
 <br>
 

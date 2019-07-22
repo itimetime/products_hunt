@@ -32,8 +32,9 @@ def login(request):
     if request.method == 'GET':
         return render(request, 'login.html')
     elif request.method == 'POST':
-        user_name = request.POST['用户名']
-        password1 = request.POST['密码']
+        user_name = request.POST.get('用户名')
+        # user_name = request.POST['用户名']
+        password1 = request.POST.get('密码')
         user = auth.authenticate(username=user_name,password=password1)
         if user is None:
             return render(request,'login.html',{'错误':'用户名或者密码错误'})

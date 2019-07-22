@@ -7,4 +7,5 @@ from . import views
 
 urlpatterns = [
     path('publish/',views.publish,name='发布页面'),
+    path('success/',views.success,name='发布成功'),
 ]
