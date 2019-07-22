@@ -48,6 +48,7 @@
 {#      <a class="nav-item nav-link" href="#">Features</a>#}
         {% if user.is_authenticated %}
             <a class="nav-item nav-link" href="{% url '发布页面' %}"/>发布产品 </a>
+            <a class="nav-item nav-link" >欢迎您{{ user.username }} </a>
             <form id='退出'method='POST' action='{% url '登出' %}' >
             {% csrf_token %}
                 <a class="nav-item nav-link" href="Javascript:{document.getElementById('退出').submit()}">退出</a>

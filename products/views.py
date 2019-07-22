@@ -4,10 +4,10 @@ from .models import Product
 from django.utils import timezone
 # Create your views here.
 
-@login_required
+
 def product_list(requset):
         return render(requset,'products.html')
-
+@login_required
 def publish(request):
     if request.method == 'GET':
          return render(request,'publish.html')
