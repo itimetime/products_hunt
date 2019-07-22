@@ -8,5 +8,7 @@ from django.urls import path
 
 urlpatterns = [
 
-    path('sign',views.signup,name='注册页面')
+    path('sign',views.signup,name='注册页面'),
+    path('login',views.login,name='登录'),
+    path('logout',views.logout,name='登出')
     ]

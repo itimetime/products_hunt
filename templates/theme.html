@@ -9,7 +9,7 @@
     <meta name="generator" content="Jekyll v3.8.5">
 
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -44,10 +44,22 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto" >
 {#     ml-auto 代表移到左边   #}
-{#      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>#}
+      <a class="nav-item nav-link active" href="#">主站 <span class="sr-only">(current)</span></a>
 {#      <a class="nav-item nav-link" href="#">Features</a>#}
-      <a class="nav-item nav-link" href="">登录</a>
+        {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url '发布页面' %}"/>发布产品 </a>
+            <form id='退出'method='POST' action='{% url '登出' %}' >
+            {% csrf_token %}
+                <a class="nav-item nav-link" href="Javascript:{document.getElementById('退出').submit()}">退出</a>
+                <input type="hidden">
+            </form>
+
+        {% else %}
+            <a class="nav-item nav-link" href="{% url '登录' %}"/>发布产品 </a>
+                  <a class="nav-item nav-link" href="{% url '登录' %}">登录</a>
         <a class="nav-item nav-link" href="{% url '注册页面' %}">注册</a>
+        {% endif %}
+
 {#      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
     </div>
   </div>
