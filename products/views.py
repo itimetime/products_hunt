@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def product_list(requset):
-    return render(requset,'products.html')
+        return render(requset,'products.html')
